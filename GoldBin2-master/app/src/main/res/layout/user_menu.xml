@@ -7,7 +7,7 @@
     android:fitsSystemWindows="true"
     tools:context=".MainActivity"
     android:layout_centerVertical="true"
-    android:background="#ffffff">
+    android:background="#80D815"> //In-matchable background
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -18,7 +18,7 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scrollbars="vertical"
+            android:scrollbars="horizontal"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
 
