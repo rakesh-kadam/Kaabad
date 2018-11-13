@@ -32,10 +32,6 @@
                 android:layout_height="50dip" />
         </LinearLayout>
 
-        <!-- Title Of Song -->
-
-
-
         <TextView
             android:id="@+id/from_name"
             android:layout_width="wrap_content"

@@ -1,20 +1,21 @@
 package com.example.altafshah.goldbin;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
+
 import java.util.ArrayList;
 
-public class UserActivity extends AppCompatActivity implements RecyclerViewAdapter.ItemListener{
+public class CategoryBlock extends AppCompatActivity implements RecyclerViewAdapter.ItemListener{
     RecyclerView recyclerView;
     ArrayList<DataModel> arrayList;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.user_menu);
+        setContentView(R.layout.activity_category_block);
 
         Intent i = getIntent();
 
@@ -23,10 +24,10 @@ public class UserActivity extends AppCompatActivity implements RecyclerViewAdapt
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         arrayList = new ArrayList<>();
-        arrayList.add(new DataModel("Sell Scrap", R.drawable.example, "#09A9FF"));
-        arrayList.add(new DataModel("Locate Tree", R.drawable.point_tree, "#3E51B1"));
-        arrayList.add(new DataModel("Find Tree", R.drawable.find_tree, "#673BB7"));
-        arrayList.add(new DataModel("Logout", R.drawable.logout, "#EF0AD7"));
+        arrayList.add(new DataModel("Paper", R.drawable.paper, "#BBBF24"));
+        arrayList.add(new DataModel("Plastic", R.drawable.plastic, "#BBBF24"));
+        arrayList.add(new DataModel("Metals", R.drawable.metals, "#BBBF24"));
+        arrayList.add(new DataModel("E-Waste", R.drawable.ewaste, "#BBBF24"));
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, arrayList, this);
         recyclerView.setAdapter(adapter);
 
@@ -43,27 +44,25 @@ public class UserActivity extends AppCompatActivity implements RecyclerViewAdapt
 
     @Override
     public void onItemClick(DataModel item) {
-        if (item.text.toString()=="Sell Scrap") {
-
-//            Intent i = new Intent(UserActivity.this, ScrapList.class);
-            Intent i = new Intent(UserActivity.this, CategoryBlock.class);
+        if (item.text.toString()=="Paper") {
+            Intent i = new Intent(CategoryBlock.this, ScrapList_Paper.class);
             startActivity(i);
         }
 
-        else if (item.text.toString()=="Locate Tree") {
+        else if (item.text.toString()=="Plastic") {
 
-        Intent i = new Intent(UserActivity.this, FindToilet.class);
-        startActivity(i);
+            Intent i = new Intent(CategoryBlock.this, ScrapList_Plastic.class);
+            startActivity(i);
 
         }
-        else if (item.text.toString()=="Find Tree") {
+        else if (item.text.toString()=="Metals") {
 
-            Intent i = new Intent(UserActivity.this, RentToilet.class);
+            Intent i = new Intent(CategoryBlock.this, ScrapList_Metal.class);
             startActivity(i);
         }
-        else if (item.text.toString()=="Logout") {
+        else if (item.text.toString()=="E-Waste") {
 
-            Intent i = new Intent(UserActivity.this, MainActivity.class);
+            Intent i = new Intent(CategoryBlock.this, ScrapList_EWaste.class);
             startActivity(i);
         }
 

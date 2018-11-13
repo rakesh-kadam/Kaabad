@@ -2,6 +2,8 @@ package com.example.altafshah.goldbin;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,13 +14,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
+public class CategoryRecyclerAdapter extends AppCompatActivity {
     ArrayList<DataModel> mValues;
     Context mContext;
-    protected ItemListener mListener;
+    protected RecyclerViewAdapter.ItemListener mListener;
 
-    public RecyclerViewAdapter(Context context, ArrayList<DataModel> values, ItemListener itemListener) {
+    public CategoryRecyclerAdapter(Context context, ArrayList<DataModel> values, RecyclerViewAdapter.ItemListener itemListener) {
 
         mValues = values;
         mContext = context;
@@ -61,21 +62,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         }
     }
 
-    @Override
-    public RecyclerViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public CategoryRecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(mContext).inflate(R.layout.recycler_view_item, parent, false);
-
-        return new ViewHolder(view);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.activity_category_recycler_adapter, parent, false);
+        return new CategoryRecyclerAdapter.ViewHolder(view);
     }
 
-    @Override
-    public void onBindViewHolder(ViewHolder Vholder, int position) {
+    public void onBindViewHolder(CategoryRecyclerAdapter.ViewHolder Vholder, int position) {
         Vholder.setData(mValues.get(position));
 
     }
 
-    @Override
     public int getItemCount() {
 
         return mValues.size();

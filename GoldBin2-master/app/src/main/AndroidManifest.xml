@@ -16,11 +16,10 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBj91Ixfl6MTQ1Fahu2L7aGz03Wvotf2HQ"
-            />
+            android:value="AIzaSyBj91Ixfl6MTQ1Fahu2L7aGz03Wvotf2HQ" />
         <meta-data
-        android:name="com.google.android.gms.version"
-        android:value="@integer/google_play_services_version" />
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
         <activity android:name=".Splash">
             <intent-filter>
@@ -37,6 +36,12 @@
         <activity android:name=".OrderConfirmed" />
         <activity android:name=".RentToilet" />
         <activity android:name=".FindToilet" />
+        <activity android:name=".CategoryBlock" />
+        <activity android:name=".ScrapList_Paper" />
+        <activity android:name=".ScrapList_Plastic" />
+        <activity android:name=".ScrapList_Metal" />
+        <activity android:name=".ScrapList_EWaste" />
+        <activity android:name=".CategoryRecyclerAdapter"></activity>
     </application>
 
 </manifest>

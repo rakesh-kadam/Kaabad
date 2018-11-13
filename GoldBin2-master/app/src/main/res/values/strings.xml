@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">GoldBin</string>
     <string name="Google_Map_API_KEY">AIzaSyBj91Ixfl6MTQ1Fahu2L7aGz03Wvotf2HQ</string>
+    <string name="title_activity_paper">Paper</string>
 </resources>

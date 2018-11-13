@@ -1,10 +1,9 @@
 package com.example.altafshah.goldbin;
 
-import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,7 +19,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ScrapList extends AppCompatActivity {
+public class ScrapList_EWaste extends AppCompatActivity {
     public static List<Scrap> scrapList = new ArrayList<>();
     public static List<Scrap> scrapListAddedToCard = new ArrayList<>();
     private RecyclerView recyclerView;
@@ -119,13 +118,13 @@ public class ScrapList extends AppCompatActivity {
         MenuItemCompat.setActionView(item1, R.layout.saved_in_bag);
         notificationCount1 = (RelativeLayout) MenuItemCompat.getActionView(item1);
 
-         tv = (TextView) notificationCount1.findViewById(R.id.badge_notification_1);
+        tv = (TextView) notificationCount1.findViewById(R.id.badge_notification_1);
         tv.setText(""+count);
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                innn = new Intent(ScrapList.this, Checkout.class);
+                innn = new Intent(ScrapList_EWaste.this, Checkout.class);
                 startActivity(innn);
             }
         });
