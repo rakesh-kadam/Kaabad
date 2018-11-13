@@ -4,10 +4,6 @@ import android.content.Context;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-/**
- * Created by anupamchugh on 05/03/17.
- */
-
 public class AutoFitGridLayoutManager extends GridLayoutManager {
 
     private int columnWidth;
@@ -18,7 +14,6 @@ public class AutoFitGridLayoutManager extends GridLayoutManager {
 
         setColumnWidth(columnWidth);
     }
-
 
     public void setColumnWidth(int newColumnWidth) {
         if (newColumnWidth > 0 && newColumnWidth != columnWidth) {
