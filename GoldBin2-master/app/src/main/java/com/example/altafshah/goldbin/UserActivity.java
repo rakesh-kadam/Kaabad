@@ -33,8 +33,8 @@ public class UserActivity extends AppCompatActivity implements RecyclerViewAdapt
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         arrayList = new ArrayList<>();
         arrayList.add(new DataModel("Scrap", R.drawable.example, "#09A9FF"));
-        arrayList.add(new DataModel("Rent Toilet", R.drawable.rent_toilet, "#3E51B1"));
-        arrayList.add(new DataModel("Find Toilet", R.drawable.find_toilet, "#673BB7"));
+        arrayList.add(new DataModel("Locate Tree", R.drawable.rent_toilet, "#3E51B1"));
+        arrayList.add(new DataModel("Point Tree", R.drawable.find_toilet, "#673BB7"));
         arrayList.add(new DataModel("Support", R.drawable.support, "#4BAA50"));
 
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, arrayList, this);
@@ -64,13 +64,13 @@ public class UserActivity extends AppCompatActivity implements RecyclerViewAdapt
             startActivity(i);
         }
 
-        else if (item.text.toString()=="Find Toilet") {
+        else if (item.text.toString()=="Point Tree") {
 
         Intent i = new Intent(UserActivity.this, FindToilet.class);
         startActivity(i);
 
         }
-        else if (item.text.toString()=="Rent Toilet") {
+        else if (item.text.toString()=="Locate Tree") {
 
             Intent i = new Intent(UserActivity.this, RentToilet.class);
             startActivity(i);
