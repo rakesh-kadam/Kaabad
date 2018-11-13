@@ -1,3 +1,4 @@
+//Package to control splash effect and data on screen during initial load
 package com.example.altafshah.goldbin;
 
 import android.content.Intent;
