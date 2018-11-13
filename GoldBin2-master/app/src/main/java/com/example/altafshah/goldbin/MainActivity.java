@@ -36,8 +36,6 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
     private Button btnlogin;
     private Button btnLinkSignup;
 
-    private SliderLayout mDemoSlider;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,50 +64,6 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
 
             }
         });
-
-
-
-
-
-
-//        mDemoSlider = (SliderLayout)findViewById(R.id.slider);
-//
-//        HashMap<String,String> url_maps = new HashMap<String, String>();
-//        url_maps.put("Hannibal", "http://static2.hypable.com/wp-content/uploads/2013/12/hannibal-season-2-release-date.jpg");
-//        url_maps.put("Big Bang Theory", "http://tvfiles.alphacoders.com/100/hdclearart-10.png");
-//        url_maps.put("House of Cards", "http://cdn3.nflximg.net/images/3093/2043093.jpg");
-//        url_maps.put("Game of Thrones", "http://images.boomsbeat.com/data/images/full/19640/game-of-thrones-season-4-jpg.jpg");
-//
-//        HashMap<String,Integer> file_maps = new HashMap<String, Integer>();
-//        file_maps.put("Pradhan Mantri JanDhan Yojna.",R.drawable.jandhan);
-//        file_maps.put("Swachcha Bharat Abhiyan.",R.drawable.hqdefault);
-//        file_maps.put("Clean Villages.",R.drawable.d);
-//        file_maps.put("Taking the Power of Digital to the Next Level.", R.drawable.digital);
-//
-//        for(String name : file_maps.keySet()){
-//            TextSliderView textSliderView = new TextSliderView(this);
-//            // initialize a SliderLayout
-//            textSliderView
-//                    .description(name)
-//                    .image(file_maps.get(name))
-//                    .setScaleType(BaseSliderView.ScaleType.Fit)
-//                    .setOnSliderClickListener(this);
-//
-//            //add your extra information
-//            textSliderView.bundle(new Bundle());
-//            textSliderView.getBundle()
-//                    .putString("extra",name);
-//
-//            mDemoSlider.addSlider(textSliderView);
-//        }
-//        mDemoSlider.setPresetTransformer(SliderLayout.Transformer.Accordion);
-//        mDemoSlider.setPresetIndicator(SliderLayout.PresetIndicators.Center_Bottom);
-//        mDemoSlider.setCustomAnimation(new DescriptionAnimation());
-//        mDemoSlider.setDuration(4000);
-//        mDemoSlider.addOnPageChangeListener(this);
-//
-
-
     }
 
     private void loginUser( final String email, final String password) {
@@ -187,13 +141,6 @@ public class MainActivity extends AppCompatActivity implements BaseSliderView.On
     private void hideDialog() {
         if (progressDialog.isShowing())
             progressDialog.dismiss();
-    }
-
-    @Override
-    protected void onStop() {
-        // To prevent a memory leak on rotation, make sure to call stopAutoCycle() on the slider before activity or fragment is destroyed
-        mDemoSlider.stopAutoCycle();
-        super.onStop();
     }
 
     @Override
