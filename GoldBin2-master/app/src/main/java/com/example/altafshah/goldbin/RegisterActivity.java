@@ -25,7 +25,7 @@ public class RegisterActivity extends AppCompatActivity {
     private static final String URL_FOR_REGISTRATION = "http://www.vodafoneindiaservices.com/Goldbin/register.php";
     ProgressDialog progressDialog;
 
-    private EditText signupInputName, signupInputEmail, signupInputPassword, signupInputConfirmPassword ,signupInputAge;
+    private EditText signupInputName, signupInputEmail, signupInputPassword, signupInputAge;
     private Button btnSignUp;
     private Button btnLinkLogin;
     private RadioGroup genderRadioGroup;
@@ -42,7 +42,6 @@ public class RegisterActivity extends AppCompatActivity {
         signupInputName = (EditText) findViewById(R.id.signup_input_name);
         signupInputEmail = (EditText) findViewById(R.id.signup_input_email);
         signupInputPassword = (EditText) findViewById(R.id.signup_input_password);
-        signupInputConfirmPassword = (EditText) findViewById(R.id.signup_input_confirm_password);
         signupInputAge = (EditText) findViewById(R.id.signup_input_age);
 
         btnSignUp = (Button) findViewById(R.id.btn_signup);
