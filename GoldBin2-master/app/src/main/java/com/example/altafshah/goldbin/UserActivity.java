@@ -28,13 +28,13 @@ public class UserActivity extends AppCompatActivity implements RecyclerViewAdapt
         /*TextView show = (TextView) findViewById(R.id.textView);
         show.setText(username);*/
 
-
-
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         arrayList = new ArrayList<>();
         arrayList.add(new DataModel("Scrap", R.drawable.example, "#09A9FF"));
         arrayList.add(new DataModel("Locate Tree", R.drawable.rent_toilet, "#3E51B1"));
         arrayList.add(new DataModel("Point Tree", R.drawable.find_toilet, "#673BB7"));
+        arrayList.add(new DataModel("Support", R.drawable.support, "#4BAA50"));
+        arrayList.add(new DataModel("Support", R.drawable.support, "#4BAA50"));
         arrayList.add(new DataModel("Support", R.drawable.support, "#4BAA50"));
 
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, arrayList, this);

@@ -17,20 +17,17 @@ public class Splash extends AwesomeSplash {
 
     @Override
     public void initSplash(ConfigSplash configSplash) {
-
-        /* you don't have to override every property */
-
-        //Customize Circular Reveal
+        //Customize App Entry Screen
         configSplash.setBackgroundColor(R.color.colorAccent); //any color you want form colors.xml
-        configSplash.setAnimCircularRevealDuration(2000); //int ms
+        configSplash.setAnimCircularRevealDuration(500); //int ms
         configSplash.setRevealFlagX(Flags.REVEAL_RIGHT);  //or Flags.REVEAL_LEFT
         configSplash.setRevealFlagY(Flags.REVEAL_BOTTOM); //or Flags.REVEAL_TOP
 
         //Choose LOGO OR PATH; if you don't provide String value for path it's logo by default
 
         //Customize Logo
-        configSplash.setLogoSplash(R.drawable.app_icon); //or any other drawable
-        configSplash.setAnimLogoSplashDuration(2000); //int ms
+        configSplash.setLogoSplash(R.drawable.app_icon); //app logo
+        configSplash.setAnimLogoSplashDuration(300); //splash duration
         configSplash.setAnimLogoSplashTechnique(Techniques.FadeIn); //choose one form Techniques (ref: https://github.com/daimajia/AndroidViewAnimations)
 
 
@@ -49,7 +46,7 @@ public class Splash extends AwesomeSplash {
         configSplash.setTitleSplash("GoldBin");
         configSplash.setTitleTextColor(R.color.gold);
         configSplash.setTitleTextSize(30f); //float value
-        configSplash.setAnimTitleDuration(3000);
+        configSplash.setAnimTitleDuration(1500);
         configSplash.setAnimTitleTechnique(Techniques.BounceInDown);
         configSplash.setTitleFont("fonts/streatwear.otf"); //provide string to your font located in assets/fonts/
 
@@ -63,6 +60,7 @@ public class Splash extends AwesomeSplash {
 
         if (isLoggedin) {
             //Toast.makeText(getApplicationContext(), namae, Toast.LENGTH_LONG).show();
+            //Flagging user logged in
             Intent i = new Intent(Splash.this, UserActivity.class);
             startActivity(i);
         }
@@ -71,8 +69,5 @@ public class Splash extends AwesomeSplash {
             startActivity(i);
             finish();
         }
-
-
-
     }
 }
