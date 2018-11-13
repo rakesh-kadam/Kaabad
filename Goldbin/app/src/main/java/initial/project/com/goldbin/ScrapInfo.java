@@ -1,7 +1,6 @@
 package initial.project.com.goldbin;
 
 public class ScrapInfo {
-
     private String title, unitPrice, scrapCategory, quantity, totalQuantity;
 
     public Scrap(String title, String unitPrice, String scrapCategory, String quantity, String totalQuantity) {
