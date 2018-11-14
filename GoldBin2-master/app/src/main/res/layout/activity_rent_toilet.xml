@@ -20,14 +20,14 @@
 
     <Button
         android:id="@+id/getLocation"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
+        android:layout_width="147dp"
+        android:layout_height="61dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="226dp"
+        android:layout_marginStart="227dp"
+        android:layout_marginLeft="227dp"
+        android:layout_marginTop="132dp"
         android:background="@color/colorAccent"
         android:padding="10dp"
         android:text="Detect Coordinate"
@@ -35,8 +35,8 @@
 
     <EditText
         android:id="@+id/Lat_Location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -44,22 +44,20 @@
         android:layout_marginLeft="30dp"
         android:layout_marginTop="108dp"
         android:inputType="none"
-        android:padding="30dp"
         android:text="latitude"
         android:textSize="20sp" />
 
     <EditText
         android:id="@+id/Lng_Location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="56dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="193dp"
-        android:layout_marginLeft="193dp"
-        android:layout_marginTop="109dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginLeft="34dp"
+        android:layout_marginTop="168dp"
         android:inputType="none"
-        android:padding="30dp"
         android:text="longitude"
         android:textSize="20sp" />
 
@@ -104,7 +102,7 @@
         android:fontFamily="@string/mr_chooser_title"
         android:text="Pin-Point Location"
         android:textAlignment="center"
-        android:textSize="30dp" />
+        android:textSize="10dp" />
 
     <TextView
         android:id="@+id/insertTree"
@@ -114,9 +112,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:text="Insert Tree"
-        android:textSize="25dp"
+        android:textSize="10dp"
         android:textAlignment="center"
         />
+
 
 
 </RelativeLayout>
