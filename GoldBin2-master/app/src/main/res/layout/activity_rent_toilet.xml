@@ -16,14 +16,6 @@
         android:layout_marginLeft="0dp"
         android:layout_marginTop="30dp">
 
-        <EditText
-            android:id="@+id/Address_input"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignStart="@+id/Address_input_name"
-            android:layout_alignLeft="@+id/Address_input_name"
-            android:ems="10"
-            android:hint="Address" />
     </android.support.design.widget.TextInputLayout>
 
     <Button
@@ -33,9 +25,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="266dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="226dp"
         android:background="@color/colorAccent"
         android:padding="10dp"
         android:text="Detect Coordinate"
@@ -49,8 +41,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="30dp"
-        android:layout_marginLeft="29dp"
-        android:layout_marginTop="171dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="108dp"
+        android:inputType="none"
         android:padding="30dp"
         android:text="latitude"
         android:textSize="20sp" />
@@ -62,15 +55,17 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="190dp"
-        android:layout_marginTop="171dp"
+        android:layout_marginStart="193dp"
+        android:layout_marginLeft="193dp"
+        android:layout_marginTop="109dp"
+        android:inputType="none"
         android:padding="30dp"
         android:text="longitude"
         android:textSize="20sp" />
 
 
     <Button
-        android:id="@+id/SaveLocation"
+        android:id="@+id/SaveTreeLocation"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -91,8 +86,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_marginStart="0dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="10dp"
         android:background="#000000" />
 
     <TextView
@@ -103,12 +98,13 @@
         android:layout_alignLeft="@+id/Lat_Location"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="113dp"
-        android:text="Pin-Point Location"
-        android:textSize="30dp"
-        android:textAlignment="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="38dp"
+        android:layout_marginTop="54dp"
         android:fontFamily="@string/mr_chooser_title"
-        />
+        android:text="Pin-Point Location"
+        android:textAlignment="center"
+        android:textSize="30dp" />
 
     <TextView
         android:id="@+id/insertTree"

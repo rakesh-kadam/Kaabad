@@ -39,30 +39,31 @@ import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 public class RentToilet extends AppCompatActivity {
     private FusedLocationProviderClient client;
     private static final String TAG = "RentToilet";
-    private static final String URL_FOR_RToilet = "http://www.vodafoneindiaservices.com/Goldbin/RToilet.php";
+    private static final String URL_FOR_ADDING_TREE = "http://www.vodafoneindiaservices.com/Goldbin/register.php";
+
     ProgressDialog progressDialog;
     Button GetLocation, SaveLocations;
-    private EditText Address;
     EditText Lat_locations, Lng_location;
+
+    private Button btnSaveTree;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rent_toilet);
-        requestPermission();
 
         // Progress dialog
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
 
-        Address = (EditText)findViewById(R.id.Address_input);
-//        Name_of_Tree = (EditText)findViewById(R.id)
         client = LocationServices.getFusedLocationProviderClient(this);
         GetLocation = (Button) findViewById(R.id.getLocation);
         SaveLocations = (Button)findViewById(R.id.SaveLocation);
 
         Lat_locations = (EditText) findViewById(R.id.Lat_Location);
         Lng_location = (EditText) findViewById(R.id.Lng_Location);
+
+        btnSaveTree = (Button) findViewById(R.id.SaveTreeLocation);
 
         GetLocation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,34 +85,21 @@ public class RentToilet extends AppCompatActivity {
                 });
             }
         });
-
-
-        SaveLocations.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                submitForm();
-            }
-
-        });
     }
 
-    private void submitForm()
-    {
-
-    }
-    private void registerUser(final String Address, final String Types) {
+    private void submitTree(final String Lat_Location, final String Lng_Location, final String TreeName, final String TreeType) {
         // Tag used to cancel the request
-        String cancel_req_tag = "register";
+        String cancel_req_tag = "Enter";
 
-        progressDialog.setMessage("Adding you ...");
+        progressDialog.setMessage("Adding tree...");
         showDialog();
 
         StringRequest strReq = new StringRequest(Request.Method.POST,
-                URL_FOR_RToilet, new Response.Listener<String>() {
+                URL_FOR_ADDING_TREE, new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {
-                Log.d(TAG, "Register Response: " + response.toString());
+                Log.d(TAG, "Tree Entry Response: " + response.toString());
                 hideDialog();
 
                 try {
@@ -119,13 +107,13 @@ public class RentToilet extends AppCompatActivity {
                     boolean error = jObj.getBoolean("error");
 
                     if (!error) {
-                        String user = jObj.getJSONObject("user").getString("Address");
-                        Toast.makeText(getApplicationContext(), "Hurray " + user +", You have successfully added a tree!!", Toast.LENGTH_SHORT).show();
+                        String user = jObj.getJSONObject("user").getString("name");
+                        Toast.makeText(getApplicationContext(), "Hi " + user +", You are successfully Added!", Toast.LENGTH_SHORT).show();
 
                         // Launch login activity
                         Intent intent = new Intent(
                                 RentToilet.this,
-                                UserActivity.class);
+                                MainActivity.class);
                         startActivity(intent);
                         finish();
                     } else {
@@ -137,12 +125,13 @@ public class RentToilet extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
             }
         }, new Response.ErrorListener() {
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e(TAG, "Registration Error: " + error.getMessage());
+                Log.e(TAG, "Data Entry Error: " + error.getMessage());
                 Toast.makeText(getApplicationContext(),
                         error.getMessage(), Toast.LENGTH_LONG).show();
                 hideDialog();
@@ -152,14 +141,21 @@ public class RentToilet extends AppCompatActivity {
             protected Map<String, String> getParams() {
                 // Posting params to register url
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("Address", Address);
-
+                params.put("Latitude", Lat_Location);
+                params.put("Longitude", Lng_Location);
+                params.put("Tree Name", TreeName);
+                params.put("Tree Type", TreeType);
+                //params.put("age", dob);
                 return params;
             }
         };
         // Adding request to request queue
         AppSingleton.getInstance(getApplicationContext()).addToRequestQueue(strReq, cancel_req_tag);
     }
+
+
+//    --------------------------------------------------------------------------------------------------
+
     private void getlocation(final String locations){
 
     }
