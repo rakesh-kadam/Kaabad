@@ -74,37 +74,28 @@ public class ScrapList_EWaste extends AppCompatActivity {
     }
 
     private void prepareScrapData() {
-        Scrap scrap = new Scrap("Shit", "200 Rs", "Per KG", "0");
+        Scrap scrap = new Scrap("Desktops", "200 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Pure Shit", "100 Rs", "Per KG", "0");
+        scrap = new Scrap("Keyboard", "200 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Absolute Shit", "60 Rs", "Per KG", "0");
+        scrap = new Scrap("Mouse", "200 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Pur Absolute Shit*", "200 Rs", "Per KG", "0");
+        scrap = new Scrap("Central Processing Unit", "200 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Some Shit", "2000 Rs", "Per KG", "0");
+        scrap = new Scrap("RAM Cards", "200 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Mi Shit Band", "1000 Rs", "Per KG", "0");
+        scrap = new Scrap("Mobile", "200 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Green Chilli Shit", "876 Rs", "Per KG", "0");
+        scrap = new Scrap("Wrist Watch", "200 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Paneer Shit Masala", "342 Rs", "Per KG", "0");
-        scrapList.add(scrap);
-
-        scrap = new Scrap("Non-Metallic Items", "50 Rs", "Per KG", "0");
-        scrapList.add(scrap);
-
-        scrap = new Scrap("Closed or Sealed Vessels", "20 Rs", "Per KG", "0");
-        scrapList.add(scrap);
-
-        scrap = new Scrap("Plate Steel", "900 Rs", "Per KG", "0");
+        scrap = new Scrap("Smart Watch", "200 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
         mAdapter.notifyDataSetChanged();

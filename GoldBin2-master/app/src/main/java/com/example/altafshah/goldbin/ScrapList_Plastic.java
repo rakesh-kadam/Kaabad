@@ -74,37 +74,40 @@ public class ScrapList_Plastic extends AppCompatActivity {
     }
 
     private void prepareScrapData() {
-        Scrap scrap = new Scrap("Shit", "200 Rs", "Per KG", "0");
+        Scrap scrap = new Scrap("Soft Plastic", "200 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Pure Shit", "100 Rs", "Per KG", "0");
+        scrap = new Scrap("Hard Plastic", "100 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Absolute Shit", "60 Rs", "Per KG", "0");
+        scrap = new Scrap("Mix Plastic", "60 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Pur Absolute Shit*", "200 Rs", "Per KG", "0");
+        scrap = new Scrap("Milk Cover", "200 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Some Shit", "2000 Rs", "Per KG", "0");
+        scrap = new Scrap("Water/Oil Cover", "2000 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Mi Shit Band", "1000 Rs", "Per KG", "0");
+        scrap = new Scrap("Polythene(Mix)", "1000 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Green Chilli Shit", "876 Rs", "Per KG", "0");
+        scrap = new Scrap("HPP", "200 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Paneer Shit Masala", "342 Rs", "Per KG", "0");
+        scrap = new Scrap("Plastic Jar 15 ltr", "876 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Non-Metallic Items", "50 Rs", "Per KG", "0");
+        scrap = new Scrap("Fibre", "342 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Closed or Sealed Vessels", "20 Rs", "Per KG", "0");
+        scrap = new Scrap("Plastic Jar 5 ltr", "50 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Plate Steel", "900 Rs", "Per KG", "0");
+        scrap = new Scrap("Polythene(high)", "20 Rs", "Per KG", "0");
+        scrapList.add(scrap);
+
+        scrap = new Scrap("Plastic Sack", "900 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
         mAdapter.notifyDataSetChanged();

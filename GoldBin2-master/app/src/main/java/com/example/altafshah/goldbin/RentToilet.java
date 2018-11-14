@@ -45,8 +45,6 @@ public class RentToilet extends AppCompatActivity {
     private EditText Address;
     EditText Lat_locations, Lng_location;
 
-
-    private RadioGroup Type;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,17 +55,14 @@ public class RentToilet extends AppCompatActivity {
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
 
-        Type = (RadioGroup) findViewById(R.id.Type_radio_group);
-
         Address = (EditText)findViewById(R.id.Address_input);
+//        Name_of_Tree = (EditText)findViewById(R.id)
         client = LocationServices.getFusedLocationProviderClient(this);
         GetLocation = (Button) findViewById(R.id.getLocation);
         SaveLocations = (Button)findViewById(R.id.SaveLocation);
 
         Lat_locations = (EditText) findViewById(R.id.Lat_Location);
         Lng_location = (EditText) findViewById(R.id.Lng_Location);
-
-
 
         GetLocation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,10 +79,7 @@ public class RentToilet extends AppCompatActivity {
                             float lng = (float) (location.getLongitude());
                             Lat_locations.setText(String.valueOf(lat));
                             Lng_location.setText(String.valueOf(lng));
-
-
                         }
-
                     }
                 });
             }
@@ -101,23 +93,10 @@ public class RentToilet extends AppCompatActivity {
             }
 
         });
-
-
     }
 
     private void submitForm()
     {
-
-
-            int selectedId = Type.getCheckedRadioButtonId();
-            String Types;
-            if(selectedId == R.id.female_radio_btn)
-                Types = "Private";
-            else
-                Types = "Government";
-
-            registerUser(Address.getText().toString(),
-                    Types);
 
     }
     private void registerUser(final String Address, final String Types) {
@@ -141,7 +120,7 @@ public class RentToilet extends AppCompatActivity {
 
                     if (!error) {
                         String user = jObj.getJSONObject("user").getString("Address");
-                        Toast.makeText(getApplicationContext(), "Hi " + user +", You are successfully Added!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Hurray " + user +", You have successfully added a tree!!", Toast.LENGTH_SHORT).show();
 
                         // Launch login activity
                         Intent intent = new Intent(
@@ -158,7 +137,6 @@ public class RentToilet extends AppCompatActivity {
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-
             }
         }, new Response.ErrorListener() {
 
@@ -175,7 +153,6 @@ public class RentToilet extends AppCompatActivity {
                 // Posting params to register url
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("Address", Address);
-                params.put("type", Types);
 
                 return params;
             }

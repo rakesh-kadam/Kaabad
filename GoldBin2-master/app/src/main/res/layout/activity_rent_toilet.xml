@@ -10,71 +10,35 @@
         android:id="@+id/Address_input_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="30dp">
 
         <EditText
             android:id="@+id/Address_input"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignStart="@+id/Address_input_name"
+            android:layout_alignLeft="@+id/Address_input_name"
             android:ems="10"
             android:hint="Address" />
     </android.support.design.widget.TextInputLayout>
 
-    <TextView
-        android:id="@+id/gender_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="85dp"
-        android:fontFamily="Enter Password"
-        android:fontFeatureSettings="Enter Password"
-        android:paddingRight="15dp"
-        android:text="Type"
-        android:textSize="20dp" />
-
-    <RadioGroup
-        android:id="@+id/Type_radio_group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="85dp"
-        android:paddingRight="10dp"
-        android:layout_toRightOf="@+id/gender_textview"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/male_radio_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/Type_radio_group"
-            android:checked="true"
-            android:paddingRight="10dp"
-            android:text="Government" />
-
-        <RadioButton
-            android:id="@+id/female_radio_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingRight="10dp"
-            android:layout_alignTop="@+id/Type_radio_group"
-            android:layout_alignEnd="@+id/Type_radio_group"
-            android:text="private" />
-    </RadioGroup>
-
     <Button
         android:id="@+id/getLocation"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="271dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="266dp"
         android:background="@color/colorAccent"
-        android:padding="20dp"
-        android:text="Get Coordinate"
+        android:padding="10dp"
+        android:text="Detect Coordinate"
         android:textColor="@android:color/white" />
 
     <EditText
@@ -82,9 +46,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="155dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="171dp"
+        android:padding="30dp"
         android:text="latitude"
         android:textSize="20sp" />
 
@@ -93,21 +60,67 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="171dp"
+        android:padding="30dp"
         android:text="longitude"
         android:textSize="20sp" />
 
 
-    <Button android:id="@+id/SaveLocation"
+    <Button
+        android:id="@+id/SaveLocation"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Save Toilet"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="550dp"
         android:background="@color/colorAccent"
-        android:layout_marginTop="350dp"
-        android:textColor="@android:color/white"/>
+        android:padding="5dp"
+        android:text="Save Tree"
+        android:textColor="@android:color/white" />
 
+    <View
+        android:id="@+id/hrLine"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_alignTop="@+id/Address_input_name"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="65dp"
+        android:background="#000000" />
+
+    <TextView
+        android:id="@+id/pinPoint"
+        android:layout_width="345dp"
+        android:layout_height="42dp"
+        android:layout_alignStart="@+id/Lat_Location"
+        android:layout_alignLeft="@+id/Lat_Location"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="113dp"
+        android:text="Pin-Point Location"
+        android:textSize="30dp"
+        android:textAlignment="center"
+        android:fontFamily="@string/mr_chooser_title"
+        />
+
+    <TextView
+        android:id="@+id/insertTree"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Insert Tree"
+        android:textSize="25dp"
+        android:textAlignment="center"
+        />
 
 
 </RelativeLayout>

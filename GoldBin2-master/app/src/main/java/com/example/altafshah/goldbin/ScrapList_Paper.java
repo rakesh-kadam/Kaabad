@@ -75,40 +75,31 @@ public class ScrapList_Paper extends AppCompatActivity {
     }
 
     private void prepareScrapData() {
-        Scrap scrap = new Scrap("Shit", "200 Rs", "Per KG", "0");
+        Scrap scrap = new Scrap("Newspaper", "200 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Pure Shit", "100 Rs", "Per KG", "0");
+        scrap = new Scrap("Books", "100 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Absolute Shit", "60 Rs", "Per KG", "0");
+        scrap = new Scrap("Carton(House)", "60 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Pur Absolute Shit*", "200 Rs", "Per KG", "0");
+        scrap = new Scrap("Magazines*", "200 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Some Shit", "2000 Rs", "Per KG", "0");
+        scrap = new Scrap("White Paper", "2000 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Mi Shit Band", "1000 Rs", "Per KG", "0");
+        scrap = new Scrap("Grey Board", "1000 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Green Chilli Shit", "876 Rs", "Per KG", "0");
+        scrap = new Scrap("Plain Paper", "876 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Paneer Shit Masala", "342 Rs", "Per KG", "0");
+        scrap = new Scrap("Rough Paper", "342 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("CRT Computer Monitors", "342 Rs", "Per KG", "0");
-        scrapList.add(scrap);
-
-        scrap = new Scrap("Non-Metallic Items", "50 Rs", "Per KG", "0");
-        scrapList.add(scrap);
-
-        scrap = new Scrap("Closed or Sealed Vessels", "20 Rs", "Per KG", "0");
-        scrapList.add(scrap);
-
-        scrap = new Scrap("Plate Steel", "900 Rs", "Per KG", "0");
+        scrap = new Scrap("Carton(Shop)", "200 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
         mAdapter.notifyDataSetChanged();

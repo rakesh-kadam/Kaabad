@@ -74,37 +74,34 @@ public class ScrapList_Metal extends AppCompatActivity {
     }
 
     private void prepareScrapData() {
-        Scrap scrap = new Scrap("Shit", "200 Rs", "Per KG", "0");
+        Scrap scrap = new Scrap("Iron", "200 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Pure Shit", "100 Rs", "Per KG", "0");
+        scrap = new Scrap("Tin", "100 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Absolute Shit", "60 Rs", "Per KG", "0");
+        scrap = new Scrap("Steel", "60 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Pur Absolute Shit*", "200 Rs", "Per KG", "0");
+        scrap = new Scrap("Brass*", "200 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Some Shit", "2000 Rs", "Per KG", "0");
+        scrap = new Scrap("Copper", "2000 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Mi Shit Band", "1000 Rs", "Per KG", "0");
+        scrap = new Scrap("Aluminium", "1000 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Green Chilli Shit", "876 Rs", "Per KG", "0");
+        scrap = new Scrap("Oil Tin 15 ltr(Fresh)", "876 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Paneer Shit Masala", "342 Rs", "Per KG", "0");
+        scrap = new Scrap("Oil Tin 15 ltr(Scrap)", "342 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Non-Metallic Items", "50 Rs", "Per KG", "0");
+        scrap = new Scrap("Casting Aluminium", "50 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
-        scrap = new Scrap("Closed or Sealed Vessels", "20 Rs", "Per KG", "0");
-        scrapList.add(scrap);
-
-        scrap = new Scrap("Plate Steel", "900 Rs", "Per KG", "0");
+        scrap = new Scrap("Oil Tin 5 ltr", "20 Rs", "Per KG", "0");
         scrapList.add(scrap);
 
         mAdapter.notifyDataSetChanged();
