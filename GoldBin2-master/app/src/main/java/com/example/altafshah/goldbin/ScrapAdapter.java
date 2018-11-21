@@ -41,7 +41,7 @@ public class ScrapAdapter extends RecyclerView.Adapter<ScrapAdapter.MyViewHolder
                 }
                 int number = Integer.parseInt(quantity.getText().toString()) + 1;
                 quantity.setText(String.valueOf(number));
-                ScrapList.scrapList.get(getAdapterPosition()).setQuantity(""+number);
+                ScrapList.scrapList.get(getAdapterPosition()).setQuantity(" "+number);
 
             } else if(v.getId() == minus.getId()) {
 
@@ -51,7 +51,7 @@ public class ScrapAdapter extends RecyclerView.Adapter<ScrapAdapter.MyViewHolder
                     ScrapList.count--;
                 }
                 quantity.setText(String.valueOf(number));
-                ScrapList.scrapList.get(getAdapterPosition()).setQuantity(""+number);
+                ScrapList.scrapList.get(getAdapterPosition()).setQuantity(" "+number);
             }
         }
 

@@ -11,9 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TextView;
+
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -39,18 +37,17 @@ import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 public class RentToilet extends AppCompatActivity {
     private FusedLocationProviderClient client;
     private static final String TAG = "RentToilet";
-    private static final String URL_FOR_ADDING_TREE = "http://www.vodafoneindiaservices.com/Goldbin/register.php";
-
+    private static final String URL_FOR_TREELIST = "http://10.1.19.32/goldbin/trees";
     ProgressDialog progressDialog;
-    Button GetLocation, SaveLocations;
-    EditText Lat_locations, Lng_location;
-
-    private Button btnSaveTree;
+    Button GetLocation, SaveTreeLocation;
+    EditText latitude, longitude;
+    EditText Tree_Name, Tree_type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rent_toilet);
+        requestPermission();
 
         // Progress dialog
         progressDialog = new ProgressDialog(this);
@@ -58,12 +55,12 @@ public class RentToilet extends AppCompatActivity {
 
         client = LocationServices.getFusedLocationProviderClient(this);
         GetLocation = (Button) findViewById(R.id.getLocation);
-        SaveLocations = (Button)findViewById(R.id.SaveLocation);
+        SaveTreeLocation = (Button)findViewById(R.id.SaveTreeLocation);
 
-        Lat_locations = (EditText) findViewById(R.id.Lat_Location);
-        Lng_location = (EditText) findViewById(R.id.Lng_Location);
-
-        btnSaveTree = (Button) findViewById(R.id.SaveTreeLocation);
+        latitude = (EditText) findViewById(R.id.latitude);
+        longitude = (EditText) findViewById(R.id.longitude);
+        Tree_Name = (EditText) findViewById(R.id.Tree_Name);
+        Tree_type = (EditText) findViewById(R.id.Tree_type);
 
         GetLocation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,28 +75,35 @@ public class RentToilet extends AppCompatActivity {
                         if (location!=null){
                             float lat = (float) (location.getLatitude());
                             float lng = (float) (location.getLongitude());
-                            Lat_locations.setText(String.valueOf(lat));
-                            Lng_location.setText(String.valueOf(lng));
+                            latitude.setText(String.valueOf(lat));
+                            longitude.setText(String.valueOf(lng));
                         }
                     }
                 });
             }
         });
+
+        SaveTreeLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
-    private void submitTree(final String Lat_Location, final String Lng_Location, final String TreeName, final String TreeType) {
+    private void addTree(final String latitude, final String longitude, final String Tree_Name, final String Tree_type) {
         // Tag used to cancel the request
-        String cancel_req_tag = "Enter";
+        String cancel_req_tag = "RentToilet";
 
-        progressDialog.setMessage("Adding tree...");
+        progressDialog.setMessage("Adding tree ...");
         showDialog();
 
         StringRequest strReq = new StringRequest(Request.Method.POST,
-                URL_FOR_ADDING_TREE, new Response.Listener<String>() {
+                URL_FOR_TREELIST, new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {
-                Log.d(TAG, "Tree Entry Response: " + response.toString());
+                Log.d(TAG, "Register Response: " + response.toString());
                 hideDialog();
 
                 try {
@@ -107,13 +111,17 @@ public class RentToilet extends AppCompatActivity {
                     boolean error = jObj.getBoolean("error");
 
                     if (!error) {
-                        String user = jObj.getJSONObject("user").getString("name");
-                        Toast.makeText(getApplicationContext(), "Hi " + user +", You are successfully Added!", Toast.LENGTH_SHORT).show();
+                        String Tree_Name = jObj.getJSONObject("Tree_Name").getString("Tree_Name");
+                        String Tree_type = jObj.getJSONObject("Tree_type").getString("Tree_type");
+                        String latitude = jObj.getJSONObject("latitude").getString("latitude");
+                        String longitude= jObj.getJSONObject("longitude").getString("longitude");
+
+                        Toast.makeText(getApplicationContext(), "Hurray! You have successfully added a tree!", Toast.LENGTH_SHORT).show();
 
                         // Launch login activity
                         Intent intent = new Intent(
                                 RentToilet.this,
-                                MainActivity.class);
+                                UserActivity.class);
                         startActivity(intent);
                         finish();
                     } else {
@@ -131,7 +139,7 @@ public class RentToilet extends AppCompatActivity {
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.e(TAG, "Data Entry Error: " + error.getMessage());
+                Log.e(TAG, "Registration Error: " + error.getMessage());
                 Toast.makeText(getApplicationContext(),
                         error.getMessage(), Toast.LENGTH_LONG).show();
                 hideDialog();
@@ -141,11 +149,10 @@ public class RentToilet extends AppCompatActivity {
             protected Map<String, String> getParams() {
                 // Posting params to register url
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("Latitude", Lat_Location);
-                params.put("Longitude", Lng_Location);
-                params.put("Tree Name", TreeName);
-                params.put("Tree Type", TreeType);
-                //params.put("age", dob);
+                params.put("latitude", latitude);
+                params.put("longitude", longitude);
+                params.put("Tree_Name", Tree_Name);
+                params.put("Tree_type", Tree_type);
                 return params;
             }
         };
@@ -153,15 +160,10 @@ public class RentToilet extends AppCompatActivity {
         AppSingleton.getInstance(getApplicationContext()).addToRequestQueue(strReq, cancel_req_tag);
     }
 
-
-//    --------------------------------------------------------------------------------------------------
-
-    private void getlocation(final String locations){
-
-    }
-        private void requestPermission(){
+    private void requestPermission(){
         ActivityCompat.requestPermissions(this,new String[]{ACCESS_FINE_LOCATION},1);
     }
+
     private void showDialog() {
         if (!progressDialog.isShowing())
             progressDialog.show();

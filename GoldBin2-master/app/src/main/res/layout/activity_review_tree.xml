@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReviewTree"
+    android:background="#FFFFFF">
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="256dp"
+        android:layout_height="61dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="#000000"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:lineSpacingExtra="14sp"
+        android:textAlignment="center"
+        android:text="Mango Tree"
+        android:textColor="#FFFFFF"
+        />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText3"
+        android:layout_alignParentStart="true"
+        android:text="TextView"
+        android:background="#000000"
+
+        />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="226dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="104dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Magnifera Indica" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editText4"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="168dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Watering Cycle" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView6"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="221dp"
+        android:background="#71FF02"
+        android:text="Normal" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="121dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="-53dp"
+        android:background="#E8FF02"
+        android:text="Compromising" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/button2"
+        android:layout_marginStart="-256dp"
+        android:layout_marginTop="108dp"
+        android:layout_toEndOf="@+id/editText3"
+        android:background="#E80606"
+        android:text="Critical" />
+
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="339dp"
+        android:layout_height="157dp"
+        android:layout_alignStart="@+id/editText4"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:hint="Enter your feedback..."
+        android:inputType="textPersonName" />
+
+</RelativeLayout>

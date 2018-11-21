@@ -48,7 +48,6 @@ public class ScrapList extends AppCompatActivity {
 
         prepareScrapData();
 
-
         addToCart = (Button) findViewById(R.id.add_to_cart_btn);
 
         addToCart.setOnClickListener(new View.OnClickListener() {
@@ -57,14 +56,12 @@ public class ScrapList extends AppCompatActivity {
 
                 scrapListAddedToCard.clear();
 
-                //int itemInCartPossition = 0;
                 for (int i = 0; i<scrapList.size(); i++){
 
                     int Q =  Integer.parseInt(scrapList.get(i).getQuantity());
 
                     if (Q>0){
                         scrapListAddedToCard.add(scrapList.get(i));
-
                     }
 
                 }

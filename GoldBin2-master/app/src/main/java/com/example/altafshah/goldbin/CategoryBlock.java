@@ -24,10 +24,10 @@ public class CategoryBlock extends AppCompatActivity implements RecyclerViewAdap
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         arrayList = new ArrayList<>();
-        arrayList.add(new DataModel("Paper", R.drawable.paper, "#BBBF24"));
-        arrayList.add(new DataModel("Plastic", R.drawable.plastic, "#BBBF24"));
-        arrayList.add(new DataModel("Metals", R.drawable.metals, "#BBBF24"));
-        arrayList.add(new DataModel("E-Waste", R.drawable.ewaste, "#BBBF24"));
+        arrayList.add(new DataModel("Paper", R.drawable.paper, "#0E2FD8"));
+        arrayList.add(new DataModel("Plastic", R.drawable.plastic, "#755BA3"));
+        arrayList.add(new DataModel("Metals", R.drawable.metals, "#DF18BB"));
+        arrayList.add(new DataModel("E-Waste", R.drawable.ewaste, "#E8640E"));
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, arrayList, this);
         recyclerView.setAdapter(adapter);
 

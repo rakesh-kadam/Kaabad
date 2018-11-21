@@ -41,7 +41,8 @@
         <activity android:name=".ScrapList_Plastic" />
         <activity android:name=".ScrapList_Metal" />
         <activity android:name=".ScrapList_EWaste" />
-        <activity android:name=".CategoryRecyclerAdapter"></activity>
+        <activity android:name=".CategoryRecyclerAdapter" />
+        <activity android:name=".ReviewTree"></activity>
     </application>
 
 </manifest>

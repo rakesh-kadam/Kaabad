@@ -18,55 +18,42 @@ public class UserActivity extends AppCompatActivity implements RecyclerViewAdapt
 
         Intent i = getIntent();
 
-        /*TextView show = (TextView) findViewById(R.id.textView);
-        show.setText(username);*/
-
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         arrayList = new ArrayList<>();
-        arrayList.add(new DataModel("Sell Scrap", R.drawable.example, "#09A9FF"));
-        arrayList.add(new DataModel("Locate Tree", R.drawable.point_tree, "#3E51B1"));
-        arrayList.add(new DataModel("Find Tree", R.drawable.find_tree, "#673BB7"));
-        arrayList.add(new DataModel("Logout", R.drawable.logout, "#EF0AD7"));
+        arrayList.add(new DataModel("Recycle Scrap", R.drawable.example, "#5CED0E"));
+        arrayList.add(new DataModel("Find Tree", R.drawable.find_tree, "#0EDFED"));
+        arrayList.add(new DataModel("Mark Tree", R.drawable.point_tree, "#FF5733"));
+        arrayList.add(new DataModel("Review Tree", R.drawable.health, "#1A0EE1"));
         RecyclerViewAdapter adapter = new RecyclerViewAdapter(this, arrayList, this);
         recyclerView.setAdapter(adapter);
 
         //AutoFitGridLayoutManager that auto fits the cells by the column width defined.
-
         AutoFitGridLayoutManager layoutManager = new AutoFitGridLayoutManager(this, 500);
         recyclerView.setLayoutManager(layoutManager);
-
-        //Simple GridLayoutManager that spans two columns
-
-        /*GridLayoutManager manager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(manager);*/
     }
 
     @Override
     public void onItemClick(DataModel item) {
-        if (item.text.toString()=="Sell Scrap") {
-
-//            Intent i = new Intent(UserActivity.this, ScrapList.class);
+        if (item.text.toString()=="Recycle Scrap") {
             Intent i = new Intent(UserActivity.this, CategoryBlock.class);
             startActivity(i);
         }
-
-        else if (item.text.toString()=="Locate Tree") {
-
-        Intent i = new Intent(UserActivity.this, FindToilet.class);
-        startActivity(i);
-
-        }
         else if (item.text.toString()=="Find Tree") {
-
+            Intent i = new Intent(UserActivity.this, FindToilet.class);
+            startActivity(i);
+        }
+        else if (item.text.toString()=="Mark Tree") {
             Intent i = new Intent(UserActivity.this, RentToilet.class);
             startActivity(i);
         }
+        else if (item.text.toString()=="Review Tree") {
+            Intent i = new Intent(UserActivity.this, ReviewTree.class);
+            startActivity(i);
+        }
         else if (item.text.toString()=="Logout") {
-
             Intent i = new Intent(UserActivity.this, MainActivity.class);
             startActivity(i);
         }
-
         Toast.makeText(getApplicationContext(), item.text + " ", Toast.LENGTH_SHORT).show();
     }
 }
